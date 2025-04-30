@@ -1,0 +1,60 @@
+﻿@model List<About>
+@{
+    ViewData["Title"] = "AboutList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h1>Hakkımda Alanı</h1>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Ana Başlık</th>
+                <th>Hakkımda Yazısı</th>
+                <th>Orta Başlık</th>
+                <th>Orta Açıklama</th>
+                <th>Doğum Tarihi</th>
+                <th>Linkedin</th>
+                <th>Degree</th>
+                <th>Mail</th>
+                <th>Telefon Numarası</th>
+                <th>Şehir</th>
+                <th>Yaş</th>
+                <th>Freelance</th>
+                <th>Alt Açıklama</th>
+                <th>Resim</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.AboutId</td>
+                    <td>@item.Title</td>
+                    <td>@item.Description</td>
+                    <td>@item.Title2</td>
+                    <td>@item.Description2</td>
+                    <td>@item.Birthday</td>
+                    <td>@item.Linkedln</td>
+                    <td>@item.Degree</td>
+                    <td>@item.Mail</td>
+                    <td>@item.Phone</td>
+                    <td>@item.City</td>
+                    <td>@item.Age</td>
+                    <td>@item.Freelance</td>
+                    <td>@item.SubDescription</td>
+                    <td><img src="@item.ImageUrl" alt="Görsel" width="50" height="50" /></td>
+                    <td><a href="/About/DeleteAbout/@item.AboutId" class="btn btn-outline-danger">Sil</a></td>
+                    <td><a href="/About/UpdateAbout/@item.AboutId" class="btn btn-outline-success">Güncelle</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<a href="/About/CreateAbout/" class="btn btn-outline-info mt-3">Yeni Hakkımda Ekle</a>
+

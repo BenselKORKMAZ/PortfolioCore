@@ -1,0 +1,43 @@
+﻿@model SocialMedia
+@{
+    ViewData["Title"] = "UpdateSocialMedia";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h3>Sosyal Medya Hesabını Güncelleme</h3>
+
+<form class="form-group" method="post">
+    <input type="hidden" asp-for="SocialMediaId" />
+    <br />
+    <label>Sosyal Medya Adı</label>
+    <input type="text" class="form-control" asp-for="SocialMediaName" style="border:1px solid black" />
+    <br />
+    <label>Link</label>
+    <input type="text" class="form-control" asp-for="SocialMediaUrl" style="border:1px solid black" />
+    <br />
+    <label>Resim - İcon</label>
+    <select id="iconSelect" class="form-control" asp-for="SocialMediaImage" style="border:1px solid black" onchange="updateIconPreview()">
+        <option value="">Seçiniz...</option>
+        <option value="fab fa-facebook-f">Facebook</option>
+        <option value="fab fa-twitter">Twitter</option>
+        <option value="fab fa-instagram">Instagram</option>
+        <option value="fab fa-linkedin-in">LinkedIn</option>
+        <option value="fab fa-youtube">YouTube</option>
+        <option value="fab fa-github">Github</option>
+    </select>
+    <br />
+    <div id="iconPreview" style="margin-top:10px; font-size:30px;"></div>
+
+    <script>
+        function updateIconPreview() {
+            var selectedIcon = document.getElementById('iconSelect').value;
+            var previewDiv = document.getElementById('iconPreview');
+            if (selectedIcon) {
+                previewDiv.innerHTML = '<i class="' + selectedIcon + '"></i>';
+            } else {
+                previewDiv.innerHTML = '';
+            }
+        }
+    </script>
+    <button class="btn btn-primary">Güncelle</button>
+</form>

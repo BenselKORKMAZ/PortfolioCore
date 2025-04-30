@@ -1,0 +1,10 @@
+﻿@model List<SocialMedia>
+
+<div class="social-links d-flex flex-row justify-content-start align-items-center gap-3">
+    @foreach (var item in Model)
+    {
+        <a href="@item.SocialMediaUrl" title="Git: @item.SocialMediaName" target="_blank" class="social-link">
+            <i class="@item.SocialMediaImage" style="font-size:30px;"></i>
+        </a>
+    }
+</div>

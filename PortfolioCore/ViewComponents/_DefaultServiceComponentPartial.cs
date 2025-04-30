@@ -3,13 +3,13 @@ using PortfolioCore.Context;
 
 namespace PortfolioCore.ViewComponents
 {
-    public class _DefaultFeatureComponentPartial : ViewComponent
+    public class _DefaultServiceComponentPartial : ViewComponent
     {
         PortfolioContext context = new PortfolioContext();
         public IViewComponentResult Invoke()
         {
-            var value = context.Features.ToList();
-            return View(value);
+            var values = context.Services.Take(6).ToList();
+            return View(values);
         }
     }
 }
