@@ -1,0 +1,27 @@
+﻿@model List<SocialMedia>
+
+<footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+        <h3 class="sitename">Bensel Korkmaz</h3>
+        
+        <p>İletişim İçin:</p>
+        <div class="social-links d-flex justify-content-center">
+            @foreach (var item in Model)
+            {
+                <a href="@item.SocialMediaUrl"><i class="@item.SocialMediaImage"></i></a>
+            }
+
+        </div>
+        <div class="container">
+
+            <div class="copyright">
+                <span>Copyright</span> <strong class="px-1 sitename">Bensel Korkmaz</strong> <span>Tüm Hakları Saklıdır.</span>
+            </div>
+            <div class="credits">
+               
+
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distribuited by <a href="https://themewagon.com">ThemeWagon</a>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,23 @@
+﻿@model List<Contact>
+
+@foreach (var item in Model)
+{
+    if (!string.IsNullOrEmpty(item.Location))
+    {
+        <div class="col-12 mt-4">
+            <iframe width="100%"
+                    height="400"
+                    style="border:0;"
+                    loading="lazy"
+                    allowfullscreen
+                    referrerpolicy="no-referrer-when-downgrade"
+                    src="@item.Location">
+            </iframe>
+        </div>
+    }
+}
+
+
+
+
+
